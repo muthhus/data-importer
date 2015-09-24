@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require "mGage_data_import"
+
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: #$0 -c count"
+
+  opts.on "-c", "--count NUMBER", "Size of multiplication table" do |cnt|
+    options[:count] = cnt.to_i
+  end
+
+  opts.on "-h", "--help", "Shows usage" do
+    warn opts
+    exit
+  end
+end.parse!
+
+campaign = MGageDataImport::DataImporter.new
+# campaign.send_vote(File.dirname(__FILE__) + "/../config/import_data.txt", options[:count])
+campaign.send_vote File.dirname(__FILE__) + "/../config/import_data.txt"
