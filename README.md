@@ -1,13 +1,11 @@
 # data-importer
-A command-line script that will import log file data into the application.    Any lines that are not well-formed should be discarded. The sample data    has been compressed to be emailed to you, but your script should assume    the data is uncompressed plain text
+A command-line script that will import log file data into the application.    Any lines that are not well-formed should be discarded. The sample data has been compressed to be emailed to you, but your script should assume    the data is uncompressed plain text
 
 Parsing rules;
 
 Here is an example log line;
 
-VOTE 1168041980 Campaign:ssss_uk_01B Validity:during Choice:Tupele
-CONN:MIG00VU MSISDN:00777778429999
-GUID:A12F2CF1-FDD4-46D4-A582-AD58BAA05E19 Shortcode:63334
+VOTE 1168041980 Campaign:ssss_uk_01B Validity:during Choice:Tupele CONN:MIG00VU MSISDN:00777778429999 GUID:A12F2CF1-FDD4-46D4-A582-AD58BAA05E19 Shortcode:63334
 
 - All well-formed lines will have the same fields, in the same order. They
  will all begin with VOTE, then have an epoch time value, then a set
