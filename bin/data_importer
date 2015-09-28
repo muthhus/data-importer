@@ -7,8 +7,8 @@ options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: #$0 -c count"
 
-  opts.on "-c", "--count NUMBER", "Size of multiplication table" do |cnt|
-    options[:count] = cnt.to_i
+  opts.on "-s", "--space SPACE", "Set whitespace value" do |cnt|
+    options[:space] = cnt.to_i
   end
 
   opts.on "-h", "--help", "Shows usage" do
@@ -18,5 +18,4 @@ OptionParser.new do |opts|
 end.parse!
 
 campaign = MGageDataImport::DataImporter.new
-# campaign.send_vote(File.dirname(__FILE__) + "/../config/import_data.txt", options[:count])
-campaign.send_vote File.dirname(__FILE__) + "/../config/import_data.txt"
+campaign.send_vote(File.dirname(__FILE__) + "/../config/import_data.txt", options[:space])
