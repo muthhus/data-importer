@@ -18,7 +18,7 @@ module MGageDataImport
             end
           end
         else
-          puts "Check the property files format"
+          raise ArgumentError.new('Must pass the whitespace value for property file') 
         end
           
       end
